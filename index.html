@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="blueBg">
+            <div class="box signin">
+                <h2>Already Have an Account?</h2>
+                <button class="signinbtn">Signin</button>
+            </div>
+            <div class="box signup">
+                <h2>Don't Have an Account?</h2>
+                <button class="signupbtn">Signup</button>
+            </div>
+        </div>
+        <div class="formBx">
+              <div class="form signinform">
+                <form>
+                    <h3>Signin</h3>
+                    <input id='name' type="text" placeholder="Username">
+                    <input  id='pass'type="password" placeholder="password">
+                  <a id='a'href="homepage.html"> <input id='btn' type="button" onClick='validate()'value="login"></a>
+                    <a href="#" class="forgot">Forgot Password</a>
+                </form>
+              </div>
+              <div class="form signupform">
+                <form>
+                    <h3>Sign up</h3>
+                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="email Address">
+                    <input type="password" placeholder="password">
+                    <input type="password" placeholder="Confirm password">
+                    <input type="submit" value="Register">
+              
+                </form>
+              </div>
+        
+
+        </div>
+    </div>
+    <script>
+        const  signinbtn =document.querySelector('.signinbtn')
+        const  signupbtn =document.querySelector('.signupbtn')
+        const  formBx =document.querySelector('.formBx')
+        const body =document.querySelector('body')
+        
+        function validate(e){
+           const uname=document.getElementById('name');
+           const pass=document.getElementById('pass');
+           const btn=document.getElementById('btn');
+           const a=document.getElementById('a');
+          let name= uname.value;
+           let passw=pass.value;
+          
+          if(name==="" || passw===""){
+                
+               alert("enter the password and username")
+               a.removeAttribute('href')
+               
+           }
+           else{
+            a.setAttribute('href','homepage.html')
+           }
+       
+    }
+
+        signupbtn.onclick=function(){
+
+            formBx.classList.add('active')
+            body.classList.add('active')
+        }
+        signinbtn.onclick=function(){
+
+            formBx.classList.remove('active')
+            body.classList.remove('active')
+        }
+    </script>
+
+</body>
+</html>
